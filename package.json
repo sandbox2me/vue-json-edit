@@ -1,10 +1,10 @@
 {
   "name": "vue-json-edit",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "visual JSON editor built as an vue component",
-  "author": "Jinkin1995 <jinkin1995@gmail.com>",
+  "author": "7dir <mltefive@gmail.com>",
   "scripts": {
-    "dev": "webpack-dev-server --watch --progress --config webpack.example.js --open --hot --host 127.0.0.1",
+    "dev": "webpack-dev-server --watch --progress --config webpack.example.js --hot --host 0.0.0.0",
     "example": "rm -rf ./example/dist/*.js && rm -rf ./example/dist/*.html && webpack --progress --config webpack.example.js",
     "build": "webpack --progress --config webpack.config.js",
     "lint": "eslint --ext .js,.vue src",
@@ -15,21 +15,25 @@
   },
   "keywords": [
     "Vue",
+    "i18n",
     "json"
   ],
   "main": "./src/index.js",
   "module": "./dist/vue-json-edit.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jinkin1995/vue-json-edit.git"
+    "url": "git+https://github.com/sandbox2me/vue-json-edit.git"
   },
-  "homepage": "https://github.com/jinkin1995/vue-json-edit",
+  "homepage": "https://github.com/sandbox2me/vue-json-edit",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jinkin1995/vue-json-edit/issues"
+    "url": "https://github.com/sandbox2me/vue-json-edit/issues"
   },
   "dependencies": {
-    "vue": "^2.2.2"
+    "vue": "^2.2.2",
+    "vue-i18n": "^7.4.2",
+    "vue-multilanguage": "^3.0.5",
+    "vuetify": "^0.17.6"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -56,12 +60,12 @@
     "highlight.js": "^9.10.0",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "node-sass": "^4.5.1",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "rimraf": "^2.6.0",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
     "style-loader": "^0.15.0",
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^1.2.2",

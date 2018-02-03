@@ -39,6 +39,9 @@
         <div class="block add-key" @click="addItem" v-if="!toAddItem">
             <i class="icon-plus"></i>
         </div>
+
+
+
     </div>
 </template>
 
@@ -47,9 +50,20 @@ import ItemAddForm from './ItemAddForm.vue'
 
 export default {
     name: 'JsonView',
-    props: {'parsedData': {}},
+    props: {
+        needName: {
+            default: true
+        },
+        'parsedData': {}
+    },
     data: function () {
         return {
+            formats: ["string", "array", "object", "number", "boolean"],
+            formatSelected: "string",
+            //--
+            keyName: "",
+            valName: "",
+            dialog: false,
             'flowData': [],
             'toAddItem': false,
             'hideMyBlock': {}
@@ -76,6 +90,8 @@ export default {
 
         'addItem': function () {
             this.toAddItem = true
+            // console.clear();
+            console.log('this.toAddItem');
         },
 
         'cancelNewItem': function () {

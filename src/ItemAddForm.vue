@@ -1,38 +1,56 @@
 <template>
-  <div class="add-form pure-form">
 
-      <div class="f-input">
-        <input type="text" v-model="keyName" class="f-input-m" placeholder="name" v-if="needName">
-        <select v-model="formatSelected" class="f-input-m">
-            <option :value="item" v-for="(item, index) in formats" :key="item">{{item}}</option>
-        </select>
-        <span class="f-input-m"><b>:</b></span>
+      <v-card>
+        <v-card-title >
 
-        <!-- -- -->
-        <template v-if="formatSelected !='array' && formatSelected != 'object'">
-            <input type="text" v-model="valName" class="f-input-m" placeholder="value" v-if="formatSelected == 'string'">
-            <input type="number" v-model="valName" class="f-input-m" placeholder="value" v-if="formatSelected == 'number'" @change="dealNumber">
-            <select name="value" v-model="valName" class="f-input-m" v-if="formatSelected == 'boolean'" @change="dealBoolean">
-                <option :value="true">true</option>
-                <option :value="false">false</option>
-            </select>
-        </template>
-      </div>
+              <div class="add-form pure-form">
+                  <div class="f-input">
 
-      <!-- -- -->
-      <div class="f-btns">
-        <button class="pure-button f-confirm" @click="confirm">确定</button>
-        <button class="pure-button" @click="cancel">取消</button>
-      </div>
-  </div>
+                   <!-- <v-icon left>lock_outline</v-icon> -->
+                   <input v-if="needName" v-model="keyName" type="text" class="f-input-m" placeholder="Ключ, имя" ></input>
+                   
+                   <!-- <v-icon left>list</v-icon> -->
+                    <select v-model="formatSelected" class="f-input-m">
+                        <option :value="item" v-for="(item, index) in formats" :key="item">{{item}}</option>
+                    </select>
+                    <span class="f-input-m"><b>:</b></span>
+
+                    <!-- <v-icon left>code</v-icon> -->
+                    <template v-if="formatSelected !='array' && formatSelected != 'object'">
+                        <input type="text" v-model="valName" class="f-input-m" placeholder="данные текст" v-if="formatSelected == 'string'">
+                        <input type="number" v-model="valName" class="f-input-m" placeholder="данные цифры" v-if="formatSelected == 'number'" @change="dealNumber">
+                        <select name="value" v-model="valName" class="f-input-m" v-if="formatSelected == 'boolean'" @change="dealBoolean">
+                            <option :value="true">true</option>
+                            <option :value="false">false</option>
+                        </select>
+                    </template>
+                  </div>
+              </div>
+
+        </v-card-title>
+        <v-card-actions>
+            <v-btn @click="confirm">{{ ru.save }}</v-btn>
+            <v-btn @click="cancel">{{ ru.cancel }}</v-btn>
+        </v-card-actions>
+      </v-card>
+
 
 </template>
 
 <script>
+// import Vuetify from 'vuetify'
 export default {
     name: "ItemAddForm",
     data: function() {
         return {
+            'flowData': [],
+            'toAddItem': false,
+            'hideMyBlock': {},
+            ru: { 
+                save: 'сохранить',
+                cancel: 'нет',
+                formats: ["строка", "массив", "объект", "номер", "булево"]
+            },
             formats: ["string", "array", "object", "number", "boolean"],
             formatSelected: "string",
             //--
@@ -84,8 +102,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-
+<style type="text/css">
 .f-input,
 .f-btns {
     display: inline-block;
@@ -102,8 +119,10 @@ export default {
 }
 
 .add-form {
-    margin-bottom: 20px;
-    font-size: .6em;
+    font-size: 16px;
 }
 
+.f-input-m {
+    border-bottom: 1px dotted lightgrey;
+}
 </style>

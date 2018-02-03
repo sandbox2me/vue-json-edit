@@ -1,5 +1,10 @@
 module.exports = {
   module: {
+    resolve: {
+      alias: {
+        vue: 'vue/dist/vue.js'
+      }
+    },
     loaders: [
       {
         test: /\.js$/,

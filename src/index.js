@@ -3,6 +3,8 @@ import JsonView from './JsonView.vue'
 import ArrayView from './ArrayView.vue'
 import PackageFile from '../package.json'
 
+import Vuetify from 'vuetify'
+
 const VERSION = PackageFile.version
 
 
@@ -12,6 +14,7 @@ const install = (Vue) => {
   Vue.component('JsonEditor', JsonEditor)
   Vue.component('json-view', JsonView)
   Vue.component('array-view', ArrayView)
+  Vue.use(Vuetify)
 
   Array.prototype.rmIndex = function (index) {
 	  this.splice(index, 1)
@@ -24,5 +27,6 @@ export default install
 export const components = {
   JsonEditor,
   VERSION
+  // Vuetify,
 }
 

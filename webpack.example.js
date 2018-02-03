@@ -20,10 +20,15 @@ config.plugins = [
   }),
 ];
 
-config.resolve = {
-  alias: {
-    vue$: 'vue/dist/vue.esm.js',
-  },
-};
+// config.resolve: {
+//   alias: {
+//     vue: 'vue/dist/vue.js'
+//   }
+// }
+// config.resolve = {
+//   alias: {
+//     vue$: 'vue/dist/vue.esm.js',
+//   },
+// };
 
 module.exports = config;

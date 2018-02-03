@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Vue-Json-Edit</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> -->
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">    
+
     <style>
       body {
         font-size: 14px;
@@ -47,11 +53,19 @@
         padding: 20px 60px;
       }
 
-    
+.loading-gif {
+  display:block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0px 0px -50px;
+}
       </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <img id="loadingg" class="loading-gif" src="../../src/assets/spin.gif">
+    </div>
     <!-- built files will be auto injected -->
  </body>
 </html>

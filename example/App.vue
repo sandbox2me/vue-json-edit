@@ -1,32 +1,41 @@
+
 <template>
-	<div class="j-w">
-		<h1 class="t">Vue-Json-Edit</h1>
-		<div class="editor-w clearfix">
-			<div class="w-2">
-				<div class="editor">
-					<JsonEditor :objData="jsonData" v-model="jsonData" ></JsonEditor>
-				</div>
-			</div>
-			<div class="w-2">
-				<div class="code-pre">
-					<div slot="content">
-						<pre>
-							<code class="json" id="res_code"></code>
-						</pre>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <v-app>
+  	<main>
+	  <v-container grid-list-md text-xs-center>
+	    <v-layout row wrap>
+							<JsonEditor :objData="jsonData" v-model="jsonData" ></JsonEditor>
+	      <v-flex xs6>
+	      </v-flex>
+
+	      <v-flex xs6 text-xs-left>
+          	<!-- <code class="json" id="res_code"></code> -->
+	      </v-flex>
+
+	    </v-layout>
+	  </v-container>
+
+
+
+
+    </main>
+  </v-app>
+		
+	</dir>
 </template>
 
 <script>
-import hljs from 'highlight.js'
+// import hljs from 'highlight.js'
 
 export default {
 	name: 'app',
 	data: function() {
 		return {
+      dialog: false,
+      dialog2: false,
+      hello: { 
+      	ru: 'Привет!'
+    	},
 			jsonData: {
 				name: 'jinkin',
 				age: 12,
@@ -51,7 +60,6 @@ export default {
 			this.drawResCode(c)
 		}
 	},
-
 	methods: {
 	
 		//JSON format print
@@ -136,7 +144,13 @@ export default {
 <style>
 @import url('../node_modules/highlight.js/styles/github.css');
 
+.card {
+    width: min-content !important;
+  }
 
+.block_content .key-input, .block_content .val-input {
+     width: 100% !important;
+  }
 </style>
 
 

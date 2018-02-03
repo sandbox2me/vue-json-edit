@@ -179,3 +179,9 @@ export default {
 @import url('./assets/styles/common.less');
 
 </style>
+<style type="text/css">
+@import url('../node_modules/vuetify/dist/vuetify.min.css');
+.del-btn {
+    z-index: 2 !important;
+}
+</style>
