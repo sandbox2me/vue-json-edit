@@ -5,7 +5,7 @@
   "author": "7dir <mltefive@gmail.com>",
   "scripts": {
     "dev": "webpack-dev-server --watch --progress --config webpack.example.js --hot --host 0.0.0.0",
-    "example": "rm -rf ./example/dist/*.js && rm -rf ./example/dist/*.html && webpack --progress --config webpack.example.js",
+    "example": "rm -rf ./docs/dist/*.js && rm -rf ./docs/dist/*.html && webpack --progress --config webpack.example.js",
     "build": "webpack --progress --config webpack.config.js",
     "lint": "eslint --ext .js,.vue src",
     "release": "npm version patch && npm publish",
@@ -31,8 +31,6 @@
   },
   "dependencies": {
     "vue": "^2.2.2",
-    "vue-i18n": "^7.4.2",
-    "vue-multilanguage": "^3.0.5",
     "vuetify": "^0.17.6"
   },
   "devDependencies": {

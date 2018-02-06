@@ -5543,10 +5543,6 @@ vue-html-loader@^1.0.0:
     loader-utils "^1.0.2"
     object-assign "^4.1.0"
 
-vue-i18n@^7.4.2:
-  version "7.4.2"
-  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-7.4.2.tgz#ef954f80898bb3609f132f77d51a7053379e03b2"
-
 vue-loader@^11.1.4:
   version "11.2.0"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-11.2.0.tgz#4a2443d7da429193aafdcb0f64215f9f25f62260"
@@ -5563,10 +5559,6 @@ vue-loader@^11.1.4:
     vue-hot-reload-api "^2.0.11"
     vue-style-loader "^2.0.0"
     vue-template-es2015-compiler "^1.2.2"
-
-vue-multilanguage@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/vue-multilanguage/-/vue-multilanguage-3.0.5.tgz#5096ea7b73adea9dc12d49f1358f85094938af22"
 
 vue-style-loader@^2.0.0:
   version "2.0.4"
