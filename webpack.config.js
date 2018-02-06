@@ -18,13 +18,13 @@ config.plugins = (config.plugins || []).concat([
     'process.env': {
       NODE_ENV: JSON.stringify('production'),
     },
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: false,
-    compress: {
-      warnings: false,
-    },
-    comments: false,
-  }),
+  })
+  // new webpack.optimize.UglifyJsPlugin({
+  //   sourceMap: false,
+  //   compress: {
+  //     warnings: false,
+  //   },
+  //   comments: false,
+  // }),
 ]);
 module.exports = config;
