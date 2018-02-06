@@ -7,7 +7,6 @@ import Vuetify from 'vuetify'
 
 const VERSION = PackageFile.version
 
-
 const install = (Vue) => {
   if (install.installed) return
 
@@ -27,6 +26,4 @@ export default install
 export const components = {
   JsonEditor,
   VERSION
-  // Vuetify,
 }
-
