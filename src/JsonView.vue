@@ -90,8 +90,6 @@ export default {
 
         'addItem': function () {
             this.toAddItem = true
-            // console.clear();
-            console.log('this.toAddItem');
         },
 
         'cancelNewItem': function () {

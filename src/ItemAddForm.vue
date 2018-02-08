@@ -7,7 +7,7 @@
                   <div class="f-input">
 
                    <!-- <v-icon left>lock_outline</v-icon> -->
-                   <input v-if="needName" v-model="keyName" type="text" class="f-input-m" placeholder="Ключ, имя" ></input>
+                   <input v-if="needName" v-model="keyName" type="text" class="f-input-m" :placeholder="lang.dataKey" ></input>
                    
                    <!-- <v-icon left>list</v-icon> -->
                     <select v-model="formatSelected" class="f-input-m">
@@ -17,8 +17,8 @@
 
                     <!-- <v-icon left>code</v-icon> -->
                     <template v-if="formatSelected !='array' && formatSelected != 'object'">
-                        <input type="text" v-model="valName" class="f-input-m" placeholder="данные текст" v-if="formatSelected == 'string'">
-                        <input type="number" v-model="valName" class="f-input-m" placeholder="данные цифры" v-if="formatSelected == 'number'" @change="dealNumber">
+                        <input type="text" v-model="valName" class="f-input-m" :placeholder="lang.dataString" v-if="formatSelected == 'string'">
+                        <input type="number" v-model="valName" class="f-input-m" :placeholder="lang.dataString" v-if="formatSelected == 'number'" @change="dealNumber">
                         <select name="value" v-model="valName" class="f-input-m" v-if="formatSelected == 'boolean'" @change="dealBoolean">
                             <option :value="true">true</option>
                             <option :value="false">false</option>
@@ -29,8 +29,8 @@
 
         </v-card-title>
         <v-card-actions>
-            <v-btn @click="confirm">{{ ru.save }}</v-btn>
-            <v-btn @click="cancel">{{ ru.cancel }}</v-btn>
+            <v-btn @click="confirm">{{ lang.save }}</v-btn>
+            <v-btn @click="cancel">{{ lang.cancel }}</v-btn>
         </v-card-actions>
       </v-card>
 
@@ -38,7 +38,8 @@
 </template>
 
 <script>
-// import Vuetify from 'vuetify'
+import lang from './lang.json'
+
 export default {
     name: "ItemAddForm",
     data: function() {
@@ -46,11 +47,7 @@ export default {
             'flowData': [],
             'toAddItem': false,
             'hideMyBlock': {},
-            ru: { 
-                save: 'сохранить',
-                cancel: 'нет',
-                formats: ["строка", "массив", "объект", "номер", "булево"]
-            },
+            lang: lang,
             formats: ["string", "array", "object", "number", "boolean"],
             formatSelected: "string",
             //--

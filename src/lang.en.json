@@ -1,0 +1,7 @@
+{
+  "save": "save",
+  "cancel": "cancel",
+  "formats": ["string", "array", "obj", "number", "boolean"],
+  "dataString": "data",
+  "dataKey": "key"
+}

@@ -181,7 +181,13 @@ export default {
 </style>
 <style type="text/css">
 @import url('../node_modules/vuetify/dist/vuetify.min.css');
-.del-btn {
+/*.del-btn {
     z-index: 2 !important;
 }
+
+.key-input {
+    border-bottom-color: darkseagreen !important;
+    border-bottom-width: thin !important;
+    border-bottom-style: dashed !important;
+}*/
 </style>

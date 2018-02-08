@@ -4,19 +4,16 @@
   	<main>
 	  <v-container grid-list-md text-xs-center>
 	    <v-layout row wrap>
-							<JsonEditor :objData="jsonData" v-model="jsonData" ></JsonEditor>
 	      <v-flex xs6>
+					<JsonEditor :objData="jsonData" v-model="jsonData" ></JsonEditor>
 	      </v-flex>
 
 	      <v-flex xs6 text-xs-left>
-          	<!-- <code class="json" id="res_code"></code> -->
+          	<code class="json" id="res_code"></code>
 	      </v-flex>
 
 	    </v-layout>
 	  </v-container>
-
-
-
 
     </main>
   </v-app>
@@ -25,7 +22,7 @@
 </template>
 
 <script>
-// import hljs from 'highlight.js'
+import hljs from 'highlight.js'
 
 export default {
 	name: 'app',
@@ -150,7 +147,10 @@ export default {
 
 .block_content .key-input, .block_content .val-input {
      width: 100% !important;
-  }
+}
+input, textarea, select, button {
+    font-family: Arial !important;
+}
 </style>
 
 
